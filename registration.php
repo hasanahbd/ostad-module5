@@ -8,7 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim($_POST['password']);
     $password_confirmation = trim($_POST['password_confirmation']);
 
-    // Server-side validation
     if (empty($username) || empty($email) || empty($password) || empty($password_confirmation)) {
         $message = 'Please fill all fields!';
     } elseif ($password !== $password_confirmation) {
@@ -77,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </div>
     </div>
-    <!-- Bootstrap JS and custom script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
     document.getElementById('registrationForm').addEventListener('submit', function(e) {
@@ -86,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         const passwordHelp = document.getElementById('passwordHelp');
 
         if (password !== password_confirmation) {
-            e.preventDefault(); // Prevent form submission
+            e.preventDefault();
             passwordHelp.textContent = 'Passwords do not match!';
             passwordHelp.style.color = 'red';
         } else {

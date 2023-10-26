@@ -12,8 +12,11 @@ if ($userData['role'] === "admin") {
     include 'editor-index.php';
 } elseif ($userData['role'] === "author") {
     include 'author-index.php';
-}else{
+} else {
     echo 'You have no role';
     exit();
+
+
+
 }
 ?>
